@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>White Gold - Nimrah Khan Jewels</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7);
+            --dark-bg: #111111;
+            --soft-bg: #FAF8F5;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--soft-bg);
+            color: #333;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Modern White Navbar */
+        .navbar {
+            background: #ffffff !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 12px 0;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #111 !important;
+            letter-spacing: 0.5px;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #444 !important;
+            margin: 0 3px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #D4AF37 !important;
+        }
+
+        /* Hero Banner Styling */
+        .category-hero {
+            background: linear-gradient(rgba(17, 17, 17, 0.70), rgba(17, 17, 17, 0.70)), 
+                        url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            padding: 70px 0;
+            text-align: center;
+            color: #fff;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        .category-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #FCF6BA;
+            letter-spacing: 1px;
+        }
+        .category-hero p {
+            font-size: 1.05rem;
+            color: #e0e0e0;
+        }
+
+        /* Luxurious Card Styling */
+        .product-card {
+            background: #ffffff;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.2);
+        }
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 15px;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        .product-card .p-3 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+        .product-card h6 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #111;
+        }
+        .product-card .btn {
+            margin-top: auto;
+            background: #111;
+            color: #FCF6BA;
+            border: 1px solid var(--primary-gold);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .product-card .btn:hover {
+            background: var(--primary-gold);
+            color: #111;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Cart Badge */
+        #cartBadge {
+            position: relative;
+            top: -8px;
+            left: -2px;
+            background-color: #D4AF37 !important;
+            color: #111;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* AI Chatbot Floating Button & Drawer */
+        .chatbot-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #111;
+            color: #D4AF37;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            cursor: pointer;
+            border: 2px solid #D4AF37;
+            transition: transform 0.3s ease;
+        }
+        .chatbot-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .chat-box {
+            position: fixed;
+            bottom: 90px;
+            left: 25px;
+            width: 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 999;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .chat-header {
+            background: #111;
+            color: #D4AF37;
+            padding: 12px 15px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-body {
+            padding: 15px;
+            height: 220px;
+            overflow-y: auto;
+            font-size: 0.88rem;
+            background: #fafafa;
+        }
+        .chat-input-area {
+            display: flex;
+            border-top: 1px solid #eee;
+        }
+        .chat-input-area input {
+            border: none;
+            padding: 10px;
+            width: 100%;
+            outline: none;
+            font-size: 0.85rem;
+        }
+        .chat-input-area button {
+            background: #111;
+            color: #D4AF37;
+            border: none;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="Bootstrap.html">Nimrah Khan Jewels</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Bootstrap.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="gold.html">Gold</a>
+                            <a class="dropdown-item active" href="white-gold.html">White Gold</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="diamond.html">Diamond</a>
+                            <a class="dropdown-item" href="stones.html">Stones</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Search Jewelry..." aria-label="Search">
+                    <button type="button" class="btn btn-outline-dark"><i class="bi bi-search"></i></button>
+                </form>
+                <button class="btn btn-dark position-relative border-warning">
+                    <i class="bi bi-cart3 me-1"></i> Cart
+                    <span id="cartBadge" class="badge rounded-pill">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="category-hero">
+        <div class="container">
+            <h1>White Gold Collection</h1>
+            <p class="mb-0">Timeless pieces crafted in pure white gold</p>
+        </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="container my-5">
+        <div class="row g-4" id="productContainer"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center p-4">
+        <div class="container">
+            &copy; 2026 Nimrah Khan Jewelry. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/923000000000?text=Hi%2C%20I%20want%20to%20inquire%20about%20White%20Gold%20Collection" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32" height="32">
+    </a>
+
+    <!-- AI CHATBOT FEATURE -->
+    <div class="chatbot-float" onclick="toggleChat()" title="Chat with AI Support">
+        <i class="bi bi-robot fs-4"></i>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <span><i class="bi bi-stars me-1"></i> Jewelry Assistant</span>
+            <i class="bi bi-x-lg" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="bg-white p-2 rounded shadow-sm mb-2 border">
+                Hello! 👋 Welcome to our White Gold Collection. How can I help you find the perfect piece today?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Ask about white gold items...">
+            <button onclick="sendChatMessage()"><i class="bi bi-send-fill"></i></button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 30 White Gold Products
+        const whiteGoldProducts = [
+            { name: "White Gold Nose Ring", price: 200, weight: "0.5g", img: "https://i.pinimg.com/736x/95/56/0f/95560fc9d64c9f556f8933b5394fdd45.jpg" },
+            { name: "White Gold Ring", price: 900, weight: "0.8g", img: "https://i.pinimg.com/1200x/aa/a1/20/aaa120d7799850d394393f85d221fa89.jpg" },
+            { name: "White Gold Elegant Ring", price: 900, weight: "0.6g", img: "https://images.openai.com/static-rsc-4/U293klHKgB2BCodJOIcjGNrhlngeS3eZOvN-9FgyYDQexx3CYU-YntXWug8AN9LJl8PKbZkLbwVDiE6lZEE2kMucwQUyacmZ8RP4v30U8nXdqp_u0XulggepIE6zTsShMC8QS4j9fcYrF8cW-BmZDE5ycLyGDZBKm3pjoTs40uy2zZFEc30rxKtw-Kw2EOcj?purpose=fullsize" },
+            { name: "White Gold Earrings", price: 450, weight: "10g", img: "https://i.pinimg.com/1200x/df/90/1b/df901b007a243470da33b344e5e85fc8.jpg" },
+            { name: "White Gold Locket", price: 500, weight: "4g", img: "https://images.openai.com/static-rsc-4/84y2bhfa66dwTj5mtgAksl1kCKh16EDYCruT9AeiuCOM3jiPc-PG1l6dSCR6XFqIHLjuQ2TYwa6fqWAP3l__cOQvtvhXAxf6wAJ29xYIbU-yg0nIKGBB3_IoYxATB2NXaPDpX0DtBfAEYPI2xzo-Jf2nhPe14Dk8i1QdW65vKt6Zbt5oZ0dM4LGbwFhmc9fR?purpose=fullsize" },
+            { name: "White Gold Bangle", price: 300, weight: "7g", img: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80" },
+            { name: "White Gold Necklace Set", price: 40000, weight: "12.5g", img: "https://images.openai.com/static-rsc-4/jKRLLZeFrD9u65y7nVONKh0GlO4i46BpHyHbWJ_TUwaAnLLm6Ecuj-zpsyOBiYMWdDHKAAch1D9ypRf1JlljuMH3BLemYi73csq2lWkjyA4kJOLXxzMWPxElNp9nzOMDSBOCwi-mpmWUDeK62nB4sYUIMXd2n93vCKobc3fkNkV0BpXDIC5GZ0TiAG1Dzgym?purpose=fullsize" },
+            { name: "White Gold Anklet", price: 150, weight: "5g", img: "https://images.openai.com/static-rsc-4/ibJiy648pFKzroWIrqFcsycSDnuXzeravHE5RwQm1zG_8fz65g6ogJ_VuVSgPsBB8B0mgqxtsmc2wL_RJBeMKno_QLf65Ti9L4mFvIEYKyT7-IzM_BoSyJbgMAn0RNIrUA6Qnvfrd2Dq_9VlU_w5OHW2jy_H1e3Wk9GH0KuRZMssk81ol207QhKSSgTTcJ0g?purpose=fullsize" },
+            { name: "White Gold Bracelet", price: 500, weight: "1g", img: "https://images.openai.com/static-rsc-4/3dx5WR2RDDdwOgmuRu5OW79c5EMJARIqQ3z_x48yHvORKJYJa6YNOeYOqU1PU67z5mF1OWSeD01hsfTdiM5V-XW1Ykctoh8u6jRX-VqdxNW2Wu6wGAzp537st0qynjRF4QraKunBdTZTiWMMawjXGRTSufj2E2ZQ1YjigwBJg17a_OeMzNrKEXEVq64uBs9d?purpose=fullsize" },
+            { name: "White Gold Necklace", price: 22000, weight: "6.5g", img: "https://images.openai.com/static-rsc-4/0RalP58CElh1llJmk5MFG8zpd39zy2EIq_vZcN0uyxDohXZOQwdPa8oB4KeIGDjxd0B61EZIjwHO992voeqR1W8nOTmyXxzOU0dqWCNgM-Qlbin6OCNESKNePMHzrAUh-K-35mE-5JS3FNpUDilpCY5VHBfAgj6aJQoI7BpvV1MOqGE_TET-nS5kLD5U5j4y?purpose=fullsize" },
+            { name: "White Gold Hoop Earrings", price: 1300, weight: "2.5g", img: "https://images.openai.com/static-rsc-4/zmMX11ioL13MCEUyFrGCkMee1fWznT8JWxnpwYhF-_7JYiBmk2tyzOnOlJcaQNk9uPfTHAJ1_IAiWXvMXksqNEEB0DmJCwIZcsCixn3uizhpXss1JmBmWnzBNRfZBmCeaDh5yV8J_yPMi8uNDJYwpedimSX6Jdg9I6NyHJfD8AvDwsR2l6EBJc8H3akV0MZc?purpose=fullsize" },
+            { name: "White Gold Studs", price: 1250, weight: "4g", img: "https://images.openai.com/static-rsc-4/ak8c6zeLzrwWpBkqkiS51aTvFJpboz1k00McpCscGX_y7HZ1GO_4xFRTYcdJ0xApZShu1g-wmF9PBLi_JNyDRQM1PtR_AiHKmRtxFWvMDtvGuRsFXQPSGvVCeSd4GZmWoB8kC5rCyfoAlg9BGPTPAXvy0vDQI30v7C8TftjtvWbYgdxzsKyTynqAUhscSUA_?purpose=fullsize" },
+            { name: "White Gold Slim Bracelet", price: 200, weight: "0.5g", img: "https://images.openai.com/static-rsc-4/3dx5WR2RDDdwOgmuRu5OW79c5EMJARIqQ3z_x48yHvORKJYJa6YNOeYOqU1PU67z5mF1OWSeD01hsfTdiM5V-XW1Ykctoh8u6jRX-VqdxNW2Wu6wGAzp537st0qynjRF4QraKunBdTZTiWMMawjXGRTSufj2E2ZQ1YjigwBJg17a_OeMzNrKEXEVq64uBs9d?purpose=fullsize" },
+            { name: "White Gold Layered Necklace", price: 2400, weight: "12g", img: "https://images.openai.com/static-rsc-4/MKLbcKpylBu3PXiDlh9j87xdkeObPDw3EuWpVoZgujHZAMtoDS1P3FIulkr5BowA3z9kaX1WsX5A8AT4e6Fm-8MYAzbyPHhYgQAUWTA3Jt_qKBNHKuUagf3XINkiZdkF6U5lraO1n27jGkHOnhobHQs1cWhUhG4OnApmPvWqieHzJCf6mKNIX88UI62Ac8H_?purpose=fullsize" },
+            { name: "White Gold Jhumkas", price: 2000, weight: "8g", img: "https://images.openai.com/static-rsc-4/4i1YjkZXq1wBSKvmWvG_dVrhpYqegjHmifInJbBrxTmDAAx5Vt2puSvyVRNhimyP6wiADDhlgydIWw5A86on93LprP601QdhGiha7eEcRTPwWUY2OiUdtaYmNxzhhiv99IycU0npxigPSIN0YhtXoU8tm5uo2NG1xx_UKVpqGS_UBcYNjBVacOAyNsyR-Apd?purpose=fullsize" },
+            { name: "White Gold Charm Bracelet & Earrings", price: 3000, weight: "7g", img: "https://images.unsplash.com/photo-1770722272510-ef28c6f57541?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { name: "White Gold Drop Earrings", price: 1000, weight: "4.5g", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
+            { name: "White Gold Bridal Necklace", price: 11999, weight: "10g", img: "https://images.unsplash.com/photo-1739194806935-3b4c66aee282?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+            { name: "White Gold Traditional Jhumkas", price: 1500, weight: "10g", img: "https://i.pinimg.com/736x/64/5c/16/645c16b374c5be73b3ff030745348546.jpg" },
+            { name: "White Gold Classic Earrings", price: 300, weight: "6g", img: "https://img.staticdj.com/94951bd71fac1226802cfbe675cce04f_2056x.jpg" },
+            { name: "White Gold Link Bracelet", price: 1000, weight: "4g", img: "https://i.pinimg.com/736x/a8/14/7f/a8147f6b3176576eaecdc020e6d1d8f6.jpg" },
+            { name: "White Gold Huggie Bracelet", price: 1200, weight: "2g", img: "https://i.pinimg.com/736x/a9/7a/c3/a97ac3f84abd94e8581ff647fbd45139.jpg" },
+            { name: "White Gold Floral Locket", price: 18000, weight: "6g", img: "https://i.pinimg.com/736x/a3/7a/40/a37a40d8248669fa20fc3b35a5bf4e61.jpg" },
+            { name: "White Gold Rope Chain", price: 2000, weight: "9.5g", img: "https://i.pinimg.com/736x/00/e4/71/00e4715d4e6adaeae92f851409ee58dc.jpg" },
+            { name: "White Gold Infinity Ring", price: 150, weight: "5.5g", img: "https://i.pinimg.com/1200x/ad/7f/45/ad7f4599495593e89dee59869df1f13b.jpg" },
+            { name: "White Gold Solitaire Band Ring", price: 500, weight: "5g", img: "https://i.pinimg.com/1200x/36/e6/28/36e62829e2d61770f01f0e72948efdcd.jpg" },
+            { name: "White Gold Chandelier Earrings", price: 400, weight: "6g", img: "https://i.pinimg.com/736x/a4/11/74/a411745b7d2ff22382815fb5f25a6b92.jpg" },
+            { name: "White Gold Bar Necklace", price: 1500, weight: "4.5g", img: "https://i.pinimg.com/736x/a6/1b/06/a61b06e4f3d41a30a037a92042da0a63.jpg" },
+            { name: "White Gold Twist Bangle", price: 550, weight: "7.5g", img: "https://i.pinimg.com/736x/2f/46/47/2f4647906237c7fe9a7fb6159fa81e61.jpg" },
+            { name: "White Gold Heart Pendant", price: 1500, weight: "3g", img: "https://i.pinimg.com/736x/a0/93/90/a09390d5c2c947bb684886de6385762e.jpg" }
+        ];
+
+        let cartCount = 0;
+        const cartBadge = document.getElementById("cartBadge");
+        const container = document.getElementById("productContainer");
+
+        whiteGoldProducts.forEach((product, index) => {
+            const col = document.createElement("div");
+            col.className = "col-md-4 col-sm-6";
+            col.innerHTML = `
+      <div class="product-card">
+        <div class="overflow-hidden">
+            <img src="${product.img}" alt="${product.name}">
+        </div>
+        <div class="p-3">
+          <h6 class="mb-1">${product.name}</h6>
+          <p class="text-muted mb-1" style="font-size: 0.85rem;">Weight: ${product.weight}</p>
+          <p class="fw-bold mb-2" style="color: #D4AF37;">Rs. ${product.price.toLocaleString()}</p>
+          <button class="btn btn-warning btn-sm" onclick="addToCart(${index})"><i class="bi bi-cart-plus me-1"></i> Add to Cart</button>
+        </div>
+      </div>
+    `;
+            container.appendChild(col);
+        });
+
+        function addToCart(index) {
+            cartCount++;
+            cartBadge.textContent = cartCount;
+        }
+
+        // Chatbot Toggle & Interactive Functions
+        function toggleChat() {
+            const chat = document.getElementById('chatBox');
+            chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const body = document.getElementById('chatBody');
+            if (input.value.trim() !== "") {
+                const userMsg = document.createElement('div');
+                userMsg.className = "bg-warning-subtle text-end p-2 rounded shadow-sm mb-2 ms-auto";
+                userMsg.style.maxWidth = "80%";
+                userMsg.innerText = input.value;
+                body.appendChild(userMsg);
+
+                const aiMsg = document.createElement('div');
+                aiMsg.className = "bg-white p-2 rounded shadow-sm mb-2 border";
+                aiMsg.style.maxWidth = "80%";
+                aiMsg.innerText = "Thanks for your query about " + input.value + "! Our white gold specialist will respond shortly.";
+                
+                setTimeout(() => {
+                    body.appendChild(aiMsg);
+                    body.scrollTop = body.scrollHeight;
+                }, 600);
+
+                input.value = "";
+                body.scrollTop = body.scrollHeight;
+            }
+        }
+    </script>
+</body>
+
+</html>

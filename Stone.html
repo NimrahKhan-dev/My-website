@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Precious Stones & Diamonds - Nimrah Khan Jewels</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-gold: #D4AF37;
+      --dark-bg: #111111;
+      --soft-bg: #FAF8F5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--soft-bg);
+      color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6, .navbar-brand {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background: #ffffff !important;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      padding: 12px 0;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #111 !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #444 !important;
+      margin: 0 3px;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #D4AF37 !important;
+    }
+
+    /* Hero Banner - Dark metallic grey with gemstone shadow silhouettes */
+    .category-hero {
+      background: linear-gradient(135deg, #2a2a2c 0%, #4a4b4e 28%, #7a7c80 50%, #45464a 72%, #232325 100%);
+      padding: 70px 0;
+      text-align: center;
+      color: #222;
+      border-bottom: 2px solid var(--primary-gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Stone images in shadow style */
+    .category-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='xMidYMid slice'><defs><filter id='b'><feGaussianBlur stdDeviation='1.2'/></filter></defs><g filter='url(%23b)' fill='black' fill-opacity='0.40'><polygon points='120,60 175,60 205,100 148,200 90,100'/><circle cx='340' cy='95' r='48'/><polygon points='560,150 610,120 670,120 720,150 720,215 670,245 610,245 560,215'/><polygon points='860,60 925,170 795,170'/><ellipse cx='1050' cy='195' rx='52' ry='68'/><polygon points='440,215 480,250 440,285 400,250'/><circle cx='980' cy='60' r='24'/><polygon points='250,205 285,225 285,265 250,285 215,265 215,225'/></g><g stroke='white' stroke-opacity='0.18' stroke-width='2' fill='none'><line x1='90' y1='100' x2='205' y2='100'/><line x1='148' y1='60' x2='148' y2='200'/><line x1='795' y1='170' x2='860' y2='110'/><line x1='925' y1='170' x2='860' y2='110'/></g></svg>") center/cover no-repeat;
+      pointer-events: none;
+    }
+
+    .category-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: none;
+      -webkit-text-fill-color: #D4AF37;
+      color: #D4AF37;
+      letter-spacing: 1px;
+    }
+
+    .shine-text {
+      color: #D4AF37;
+      font-weight: 600;
+    }
+
+    /* Twinkling sparkles */
+    .category-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle, #fff 0 2px, rgba(255,255,255,0) 4px) 12% 25% / 40px 40px no-repeat,
+        radial-gradient(circle, #fff 0 3px, rgba(255,255,255,0) 6px) 28% 70% / 50px 50px no-repeat,
+        radial-gradient(circle, #fff 0 2px, rgba(255,255,255,0) 4px) 47% 18% / 40px 40px no-repeat,
+        radial-gradient(circle, #fff 0 3px, rgba(255,255,255,0) 6px) 66% 78% / 50px 50px no-repeat,
+        radial-gradient(circle, #fff 0 2px, rgba(255,255,255,0) 4px) 82% 30% / 40px 40px no-repeat,
+        radial-gradient(circle, #fff 0 3px, rgba(255,255,255,0) 6px) 92% 65% / 50px 50px no-repeat;
+      animation: twinkle 2.4s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.25; }
+      100% { opacity: 1; }
+    }
+
+    .category-hero p {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #9A7209;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(212, 175, 55, 0.2);
+    }
+
+    .img-box {
+      background: #ffffff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+    }
+
+    .product-card img {
+      max-height: 180px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.18));
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .stone-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #111;
+      color: #FCF6BA;
+      border: 1px solid var(--primary-gold);
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 12px;
+      z-index: 2;
+    }
+
+    .product-card .p-3 {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .product-card h6 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .product-card .btn {
+      margin-top: auto;
+      background: #111;
+      color: #FCF6BA;
+      border: 1px solid var(--primary-gold);
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+
+    .product-card .btn:hover {
+      background: var(--primary-gold);
+      color: #111;
+    }
+
+    #cartBadge {
+      position: relative;
+      top: -8px;
+      left: -2px;
+      background-color: #D4AF37 !important;
+      color: #111;
+    }
+
+    .demand-banner {
+      background: linear-gradient(135deg, #111111, #222222);
+      border: 1px solid var(--primary-gold);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+    }
+
+    .demand-banner h4 {
+      color: #FCF6BA;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-more {
+      background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728);
+      color: #111;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-more:hover {
+      transform: scale(1.05);
+      background: #FCF6BA;
+      color: #111;
+    }
+
+    footer {
+      background: var(--dark-bg);
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Floating AI Chatbot Feature */
+    .chatbot-float {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: #111;
+      color: #D4AF37;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      cursor: pointer;
+      border: 2px solid #D4AF37;
+      transition: transform 0.3s ease;
+    }
+
+    .chatbot-float:hover {
+      transform: scale(1.1);
+    }
+
+    .chat-box {
+      position: fixed;
+      bottom: 90px;
+      left: 25px;
+      width: 320px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+
+    .chat-header {
+      background: #111;
+      color: #D4AF37;
+      padding: 12px 15px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-body {
+      padding: 15px;
+      height: 220px;
+      overflow-y: auto;
+      font-size: 0.88rem;
+      background: #fafafa;
+    }
+
+    .chat-input-area {
+      display: flex;
+      border-top: 1px solid #eee;
+    }
+
+    .chat-input-area input {
+      border: none;
+      padding: 10px;
+      width: 100%;
+      outline: none;
+      font-size: 0.85rem;
+    }
+
+    .chat-input-area button {
+      background: #111;
+      color: #D4AF37;
+      border: none;
+      padding: 0 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="Bootstrap.html">Nimrah Khan Jewels</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Bootstrap.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contact%20Us.html">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="Gold.html">Gold</a>
+              <a class="dropdown-item" href="White%20Gold.html">White Gold</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="Diamond.html">Diamond</a>
+              <a class="dropdown-item active" href="Stone.html">Stones</a>
+            </div>
+          </li>
+        </ul>
+        <button class="btn btn-dark border-warning">
+          <i class="bi bi-cart3 me-1"></i> Selection
+          <span id="cartBadge" class="badge rounded-pill">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="category-hero">
+    <div class="container">
+      <h1 class="mb-2">Precious Loose Gemstones & Diamond Cuts</h1>
+      <p class="mb-0"><span class="shine-text">Explore individual loose gemstones, birthstones & custom cuts</span> 💎🔮</p>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row g-4" id="productContainer"></div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="demand-banner">
+          <h4 class="mb-2">✨ Exclusive Gemstone Collection Available On Your Demand</h4>
+          <p class="text-light mb-4" style="font-size: 0.95rem;">Looking for rare raw crystals, natural uncut birthstones, or custom faceted shapes?</p>
+          <button id="loadMoreBtn" class="btn-more" onclick="toggleMoreStones()">
+            Explore Full Collection <i class="bi bi-chevron-down ms-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center p-4">
+    <div class="container">
+      &copy; 2026 Nimrah Khan Jewelry. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/923000000000?text=Hi%2C%20I%20want%20to%20inquire%20about%20Stones%20Collection" class="whatsapp-float"
+    target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32" height="32">
+  </a>
+
+  <!-- AI CHATBOT FEATURE -->
+  <div class="chatbot-float" onclick="toggleChat()" title="Chat with AI Support">
+    <i class="bi bi-robot fs-4"></i>
+  </div>
+
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <span><i class="bi bi-stars me-1"></i> Jewelry Assistant</span>
+      <i class="bi bi-x-lg" style="cursor: pointer;" onclick="toggleChat()"></i>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="bg-white p-2 rounded shadow-sm mb-2 border">
+        Hello! 👋 Welcome to our Stones Collection. Ask me anything about our gemstones and diamond cuts!
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Ask about stones...">
+      <button onclick="sendChatMessage()"><i class="bi bi-send-fill"></i></button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const stoneProducts = [
+      { name: "Natural Red Ruby Cut", category: "Ruby", weight: "2.5 Carat", img: "stones/Gemini_Generated_Image_6voy3t6voy3t6voy.jpg" },
+      { name: "White CZ Diamond", category: "CZ Diamond", weight: "1.0 Carat", img: "stones/Gemini_Generated_Image_czdiamond.jpg" },
+      { name: "Emerald", category: "Gemstone", weight: "3.0 Carat", img: "stones/Gemini_Generated_Image_Emerald.jpg" },
+      { name: "Diamond", category: "Mineral", weight: "2.8 Carat", img: "stones/Gemini_Generated_Image_Diamond.jpg" },
+      { name: "Emerald Green Trillion Cut", category: "Emerald", weight: "2.1 Carat", img: "stones/green gemstone trillion.png" },
+      { name: "Black Onyx Octagon", category: "Onyx", weight: "4.0 Carat", img: "stones/Black Onyx.png" },
+      { name: "Grey Chalcedony Round", category: "Chalcedony", weight: "1.8 Carat", img: "stones/Grey Blue Round Cabochon.png" },
+      { name: "Amethyst Crystal Oval", category: "Amethyst", weight: "3.5 Carat", img: "stones/Gemini_Generated_Image_Amethyst Crystal Oval.jpg" },
+      { name: "Quartz Rock Crystal", category: "Quartz", weight: "5.0 Carat", img: "stones/Black Crystal Obsidian.png" },
+      { name: "Wollastonite White", category: "Wollastonite", weight: "2.7 Carat", img: "stones/Mineral Stone Wollastonite.png" },
+      { name: "Rose Quartz Raw", category: "Quartz", weight: "4.5 Carat", img: "stones/Rose Quartz.png" },
+      { name: "Natural Lapis Lazuli", category: "Jade", weight: "2.9 Carat", img: "stones/Natural Lapis Lazuli.png" },
+      { name: "Pyrite Golden Nugget", category: "Pyrite", weight: "4.1 Carat", img: "stones/Pyrite Golden Nugget.png" },
+
+    ];
+
+    const container = document.getElementById("productContainer");
+    const initialShowCount = 4;
+    let showingAll = false;
+    let selectionCount = 0;
+
+    function renderProducts() {
+      container.innerHTML = "";
+      const itemsToRender = showingAll ? stoneProducts : stoneProducts.slice(0, initialShowCount);
+
+      itemsToRender.forEach((product) => {
+        const col = document.createElement("div");
+        col.className = "col-lg-3 col-md-4 col-sm-6";
+        col.innerHTML = `
+          <div class="product-card">
+            <span class="stone-tag">${product.category}</span>
+            <div class="img-box">
+              <img src="${product.img}" alt="${product.name}">
+            </div>
+            <div class="p-3">
+              <h6>${product.name}</h6>
+              <p class="text-muted mb-3" style="font-size: 0.82rem;">Weight: ${product.weight}</p>
+              <button class="btn btn-sm" onclick="addToSelection()">Inquire Price</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+      });
+    }
+
+    function toggleMoreStones() {
+      showingAll = !showingAll;
+      renderProducts();
+      
+      const btn = document.getElementById("loadMoreBtn");
+      if (showingAll) {
+        btn.innerHTML = `Show Less Collection <i class="bi bi-chevron-up ms-1"></i>`;
+      } else {
+        btn.innerHTML = `Explore Full Collection <i class="bi bi-chevron-down ms-1"></i>`;
+      }
+    }
+
+    function addToSelection() {
+      selectionCount++;
+      document.getElementById("cartBadge").textContent = selectionCount;
+    }
+
+    // Interactive Chatbot Functions
+    function toggleChat() {
+      const chat = document.getElementById('chatBox');
+      chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const body = document.getElementById('chatBody');
+      if (input.value.trim() !== "") {
+        const userMsg = document.createElement('div');
+        userMsg.className = "bg-warning-subtle text-end p-2 rounded shadow-sm mb-2 ms-auto";
+        userMsg.style.maxWidth = "80%";
+        userMsg.innerText = input.value;
+        body.appendChild(userMsg);
+
+        const aiMsg = document.createElement('div');
+        aiMsg.className = "bg-white p-2 rounded shadow-sm mb-2 border";
+        aiMsg.style.maxWidth = "80%";
+        aiMsg.innerText = "Thank you for asking about " + input.value + "! Our gemstone specialist will reply shortly.";
+
+        setTimeout(() => {
+          body.appendChild(aiMsg);
+          body.scrollTop = body.scrollHeight;
+        }, 600);
+
+        input.value = "";
+        body.scrollTop = body.scrollHeight;
+      }
+    }
+
+    renderProducts();
+  </script>
+</body>
+
+</html>
